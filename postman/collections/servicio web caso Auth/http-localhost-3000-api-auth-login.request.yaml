@@ -1,0 +1,15 @@
+$kind: http-request
+name: http://localhost:3000/api/auth/login
+description: ""
+url: http://localhost:3000/api/auth/login
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"usuario\": \"Diego\",\r
+
+    \    \"contrasena\": \"12345678\"\r
+
+    }"
+order: 1000
