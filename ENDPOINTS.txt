@@ -1,0 +1,52 @@
+ENDPOINTS DE LA API — SERVICIO WEB DE REGISTRO E INICIO DE SESIÓN
+Proyecto: Servicio web de autenticación
+Tecnologías: Node.js, Express, MySQL y bcrypt
+Base URL: http://localhost:3000
+
+1. Registro de usuario
+Método: POST
+Endpoint: http://localhost:3000/api/auth/registro
+Descripción: Registra un nuevo usuario en la base de datos.
+Cuerpo de la petición:
+{
+  "usuario": "diego",
+  "contraseña": "123456"
+}
+Respuesta exitosa:
+{
+  "exito": true,
+  "mensaje": "SIIIUUUUUUUU Usuario registrado exitosamente."
+}
+Código HTTP: 201 Created
+
+2. Inicio de sesión
+Método: POST
+Endpoint: http://localhost:3000/api/auth/login
+Descripción: Valida las credenciales del usuario y permite iniciar sesión.
+Cuerpo de la petición:
+{
+  "usuario": "diego",
+  "contraseña": "123456"
+}
+Respuesta exitosa:
+{
+  "exito": true,
+  "mensaje": "Inicio de sesión exitoso."
+}
+Código HTTP: 200 OK
+
+3. Inicio de sesión con credenciales incorrectas
+Método: POST
+Endpoint: http://localhost:3000/api/auth/login
+Descripción: Valida que la API rechace credenciales incorrectas.
+Cuerpo de la petición:
+{
+  "usuario": "diego",
+  "contraseña": "12345678"
+}
+Respuesta esperada:
+{
+  "exito": false,
+  "mensaje": "Usuario o contraseña incorrectos."
+}
+Código HTTP: 401 Unauthorized
